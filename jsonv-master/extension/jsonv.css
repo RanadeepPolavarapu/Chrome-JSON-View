@@ -1,3 +1,7 @@
+a:visited{
+  color:blue;
+}
+
 .jsonv {
   font-family: monospace;
 }
@@ -64,7 +68,7 @@
 }
 .jsonv-string {
   color: #C41A16;
-  white-space: pre-wrap;
+  white-space: nowrap;
 }
 .jsonv-number, .jsonv-boolean {
   color: #1c00cf;
