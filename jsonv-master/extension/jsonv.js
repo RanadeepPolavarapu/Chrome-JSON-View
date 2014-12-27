@@ -7,7 +7,8 @@ if (location.protocol == 'chrome-extension:') {
             try {
                 client.postMessage(function html(data) {
                     var type = Array.isArray(data) ? 'array' : typeof data == 'object' ? data ? 'object' : 'null' : typeof data;
-                    return '<span class="jsonv-' + type + '" title="' + data + '">' + (type == 'array' ? '<ol><li class="jsonv-count">' + data.length + '</li>' + data.map(function(e) {
+                    console.log(data);
+                    return '<span class="jsonv-' + type + '" title="' + data + '">' + (type == 'array' ? '<ol>' + '<li class="jsonv-count">' + data.length + '</li>' + data.map(function(e) {
                         return '<li>' + html(e) + '</li>';
                     }).join('') + '</ol>' : type == 'object' ? '<ul>' + Object.keys(data).map(function(key) {
                         return '<li><span class="jsonv-key">' + key.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</span>: ' + html(data[key]) + '</li>';
